@@ -54,12 +54,6 @@ This library was used for networking and parsing. I would have used Kingfisher f
 
 • Although there is no proper room for Reactive Programming, which I have developed strong adoration for in the past few months.
 
-[Clean Swift Examples](https://github.com/Clean-Swift/CleanStore)
-
-• This is a code which i wrote sometime ago follwing View Model and View Controller binding.
-
-• It shows images from the Flickr API and caches them.
-
 ## Apps
 
 ### UI
