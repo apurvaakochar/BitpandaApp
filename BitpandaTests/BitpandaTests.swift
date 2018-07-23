@@ -10,20 +10,25 @@ import XCTest
 @testable import Bitpanda
 
 class BitpandaTests: XCTestCase {
+    var coinInteractor: CoinInteractor!
+    var coinViewController: CoinViewController!
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        coinInteractor = CoinInteractor()
+        coinViewController = CoinViewController()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        coinInteractor = nil
+        coinViewController = nil
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testClosure() {
+        coinViewController.interactor.isLoading = true
+        coinViewController.interactor.cellVM.append(Coin(name: "Bitcoin", symbol: "BTC", price: "", oneDayChange: "", oneWeekChange: "", lastUpdated: ""))
+        XCTAssertEqual(coinViewController.tableView.numberOfRows(inSection: 0), 1)
     }
     
     func testPerformanceExample() {
